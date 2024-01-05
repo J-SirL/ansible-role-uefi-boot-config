@@ -4,12 +4,13 @@
   gather_facts: false
   tasks:
 
-  - name: Populate instance config
-    ansible.builtin.set_fact:
-      instance_conf: "{{ lookup('file', molecule_instance_config) | from_yaml }}"
-
-  - name: Destroy molecule instance(s)
-    ansible.builtin.include_tasks: "{{ molecule_driver.resources }}/destroy.yml"
-    loop: "{{ instance_conf.instances }}"
-    loop_control:
-      loop_var: instance
+     - name: Populate instance config
+       ansible.builtin.set_fact:
+         instance_conf: "{{ lookup('file', molecule_instance_config) | from_yaml }}"
+   
+     - name: Destroy molecule instance(s)
+       ansible.builtin.include_tasks: 
+         "{{ molecule_driver.resources }}/destroy.yml"
+       loop: "{{ instance_conf.instances }}"
+       loop_control:
+         loop_var: instance
