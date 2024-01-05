@@ -6,7 +6,8 @@
 
      - name: Populate instance config
        ansible.builtin.set_fact:
-         instance_conf: "{{ lookup('file', molecule_instance_config) | from_yaml }}"
+         instance_conf: "{{ lookup('file', molecule_instance_config) 
+           | from_yaml }}"
    
      - name: Destroy molecule instance(s)
        ansible.builtin.include_tasks: 
