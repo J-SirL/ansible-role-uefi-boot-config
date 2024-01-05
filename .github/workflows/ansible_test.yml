@@ -1,0 +1,33 @@
+---
+name: Ansible Role Test on AlmaLinux 9
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      almalinux:
+        image: almalinux:9
+        options: --privileged
+        ports:
+          - 80:80
+
+    steps:
+    - name: Check out the code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+
+    - name: Install Molecule and dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install molecule docker
+
+    - name: Run Molecule Test inside AlmaLinux 9 Container
+      run: |
+        molecule test
