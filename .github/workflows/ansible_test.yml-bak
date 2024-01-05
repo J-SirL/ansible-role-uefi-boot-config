@@ -21,8 +21,6 @@ jobs:
     steps:
     - name: Check out the code
       uses: actions/checkout@v2
-      with:
-        path: 'J-SirL.uefi_boot_config'
 
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -31,6 +29,7 @@ jobs:
 
     - name: Install Molecule and dependencies
       run: |
+        python -m pip install --upgrade pip
         pip3 install ansible molecule molecule-plugins[docker] docker
 
     - name: Run Molecule Test inside AlmaLinux 9 Container
