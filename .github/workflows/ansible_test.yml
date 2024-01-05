@@ -30,4 +30,4 @@ jobs:
 
     - name: Run Molecule Test inside AlmaLinux 9 Container
       run: |
-        molecule test
+        molecule test -s ansible-role-uefi-boot-config
