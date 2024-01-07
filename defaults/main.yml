@@ -28,6 +28,3 @@ grub_enable_blscfg: 'true'
 
 # Path to custom boot image
 grub_boot_image: /boot/grub/boot_image.png
-
-# Path to custom boot text image (note: GRUB does not natively support a separate boot text image)
-grub_boot_text_image: /path/to/default/text_image.png

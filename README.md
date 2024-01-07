@@ -44,7 +44,6 @@ The role includes several default variables which can be overridden in your play
 - `grub_disable_recovery`: Whether to disable recovery mode. Default is `'true'`.
 - `grub_enable_blscfg`: Whether to enable the Boot Loader Specification (BLS). Default is `'true'`.
 - `grub_boot_image`: Path to custom boot image. Default is `/boot/grub/boot_image.png`.
-- `grub_boot_text_image`: Path to custom boot text image (note: GRUB does not natively support a separate boot text image). Default is `/path/to/default/text_image.png`.
 
 To override a variable, specify it in your playbook like this:
 
