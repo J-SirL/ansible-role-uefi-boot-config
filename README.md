@@ -1,3 +1,5 @@
+![Workflow status](https://github.com/J-SirL/ansible-role-uefi-boot-config/actions/workflows/ci.yml/badge.svg)
+
 # Ansible Role: UEFI Boot Configuration
 
 ## Table of Contents
