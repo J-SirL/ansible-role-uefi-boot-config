@@ -48,7 +48,7 @@ Please note, this role will be quite basic and might need significant customizat
    Create a Jinja2 template for the GRUB configuration. You'll need to customize this based on the specific settings you want to change.
    ```jinja2
    GRUB_TIMEOUT=5
-   GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
+   GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo AlmaLinux`
    GRUB_DEFAULT=0
    GRUB_HIDDEN_TIMEOUT=0
    GRUB_HIDDEN_TIMEOUT_QUIET=true

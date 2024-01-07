@@ -1,13 +1,12 @@
 ---
-- name: Converge
-  hosts: all
-  become: true
-  tasks:
-    - name: Ensure lsb_release is installed
-      ansible.builtin.package:
-        name: redhat-lsb-core
-        state: present
-
-    - name: Include ansible-role-uefi-boot-config
-      include_role:
-        name: ansible-role-uefi-boot-config
+    - name: Converge
+      hosts: all
+      become: true
+      tasks:
+          - name: Ensure lsb_release is installed
+            ansible.builtin.package:
+                name: redhat-lsb-core
+                state: presen
+          - name: Include ansible-role-uefi-boot-config
+            include_role:
+                name: ansible-role-uefi-boot-config
