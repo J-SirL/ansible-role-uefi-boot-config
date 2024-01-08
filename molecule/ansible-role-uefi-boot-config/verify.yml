@@ -1,0 +1,49 @@
+---
+- name: Verify GRUB Configuration
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Check grub.cfg exists
+      stat:
+        path: /boot/grub/grub.cfg
+      register: grub_cfg
+
+    - name: Assert grub.cfg exists
+      assert:
+        that:
+          - grub_cfg.stat.exists
+        fail_msg: "grub.cfg does not exist"
+        success_msg: "grub.cfg exists"
+
+    - name: Read content of grub.cfg
+      slurp:
+        src: /boot/grub/grub.cfg
+      register: grub_content
+
+    - name: Convert grub.cfg content to string
+      set_fact:
+        grub_cfg_content: "{{ grub_content['content'] | b64decode }}"
+
+    - name: Assert key GRUB settings
+      block:
+        # Asserting the presence of a specific setting
+        - name: Assert GRUB_TIMEOUT
+          assert:
+            that:
+              - "'GRUB_TIMEOUT=' in grub_cfg_content"
+            fail_msg: "GRUB_TIMEOUT setting missing in grub.cfg"
+            success_msg: "GRUB_TIMEOUT setting present in grub.cfg"
+
+        # Asserting the value of a specific setting
+        - name: Assert GRUB_CMDLINE_LINUX_DEFAULT value
+          assert:
+            that:
+              - "'GRUB_CMDLINE_LINUX_DEFAULT=\"quiet splash\"' in grub_cfg_content"
+            fail_msg: "GRUB_CMDLINE_LINUX_DEFAULT value is incorrect in grub.cfg"
+            success_msg: "GRUB_CMDLINE_LINUX_DEFAULT value is correct in grub.cfg"
+
+        # Add more assertions for other settings as required
+        # ...
+
+    # Additional checks or tasks as needed
