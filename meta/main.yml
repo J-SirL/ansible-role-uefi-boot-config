@@ -1,0 +1,38 @@
+---
+galaxy_info:
+  role_name: uefi_boot_config
+  namespace: j_sirl
+  author: Johan Sörell
+  description: |
+   "This role is designed for configuring UEFI (Unified Extensible Firmware Interface) boot settings on various systems.
+   It ensures that UEFI settings are correctly applied for secure and efficient booting of the operating system."
+  # List of platforms and versions this role supports.
+  platforms:
+    - name: EL
+      versions:
+        - "8"
+        - "9"
+    - name: Ubuntu
+      versions:
+        - focal
+        - bionic
+
+  # List any dependencies here
+  dependencies: []
+
+  # License
+  license:
+    - GPL-3.0
+
+  # Minimum Ansible version
+  min_ansible_version: "2.9"
+
+  # Tags for categorizing the role
+  galaxy_tags:
+    - system
+    - uefi
+    - boot
+    - configuration
+
+# Specify any special requirements here
+collections: []
