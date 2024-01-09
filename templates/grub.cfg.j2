@@ -11,7 +11,6 @@ GRUB_DISABLE_RECOVERY="{{ grub_disable_recovery | default('true') }}"
 GRUB_ENABLE_BLSCFG={{ grub_enable_blscfg | default('true') }}
 
 # Custom Boot Image and Boot Text
-GRUB_BACKGROUND="{{ grub_boot_image | default('/path/to/default/image.png') }}"
-GRUB_MENU_PICTURE="{{ grub_boot_text_image | default('/path/to/default/text_image.png') }}"
+GRUB_BACKGROUND={{ grub_boot_image }}
 GRUB_HIDDEN_TIMEOUT=0
 GRUB_HIDDEN_TIMEOUT_QUIET=true

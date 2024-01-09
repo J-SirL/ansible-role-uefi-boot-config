@@ -3,7 +3,7 @@
 - name: Copy custom GRUB boot image to the target system
   ansible.builtin.copy:
       src: boot_image.png
-      dest: /boot/grub/boot_image.png
+      dest: "{{ grub_boot_image }}"
       owner: root
       group: root
       mode: '0644'

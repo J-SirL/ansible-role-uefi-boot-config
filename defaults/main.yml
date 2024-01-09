@@ -27,4 +27,4 @@ grub_disable_recovery: 'true'
 grub_enable_blscfg: 'true'
 
 # Path to custom boot image
-grub_boot_image: /boot/grub/boot_image.png
+grub_boot_image: /boot/grub2/boot_image.png
