@@ -18,6 +18,9 @@
   ansible.builtin.template:
       src: grub.cfg.j2
       dest: /etc/default/grub
+      validate: bash -n %s
+      owner: root
+      group: root
       mode: '0644'
   when: grub_config.stat.exists
 
