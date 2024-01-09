@@ -17,9 +17,8 @@ grub_disable_submenu: 'true'
 grub_terminal_output: console
 
 # Additional kernel parameters
-grub_cmdline_linux: rd.driver.blacklist=nouveau modprobe.blacklist=nouveau crashkernel=1G-4G:192M,4G-64G:256M,64G-:512M resume=/dev/mapper/almalinux_developer-swap
-    rd.lvm.lv=almalinux_developer/root rd.lvm.lv=almalinux_developer/swap rhgb quiet
-
+# OnlyNvidia grub_cmdline_linux: rd.driver.blacklist=nouveau modprobe.blacklist=nouveau crashkernel=1G-4G:192M,4G-64G:256M,64G-:512M resume=/dev/mapper/almalinux_developer-swap rd.lvm.lv=almalinux_developer/root rd.lvm.lv=almalinux_developer/swap rhgb quiet
+grub_cmdline_linux: "crashkernel=1G-4G:192M,4G-64G:256M,64G-:512M resume=/dev/mapper/almalinux-swap rd.lvm.lv=almalinux/root rd.lvm.lv=almalinux/swap rhgb quiet"
 # Whether to disable recovery mode
 grub_disable_recovery: 'true'
 
