@@ -17,12 +17,8 @@ galaxy_info:
         - focal
         - bionic
 
-  # List any dependencies here
-  dependencies: []
-
-  # License
-  license:
-    - GPL-3.0
+   # License
+  license: GPL-3.0
 
   # Minimum Ansible version
   min_ansible_version: "2.9"
@@ -36,3 +32,6 @@ galaxy_info:
 
 # Specify any special requirements here
 collections: []
+
+ # List any dependencies here
+dependencies: []
