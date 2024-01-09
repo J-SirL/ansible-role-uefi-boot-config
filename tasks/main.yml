@@ -26,5 +26,5 @@
 
 - name: Update GRUB
   ansible.builtin.command:
-      cmd: grub2-mkconfig -o /boot/grub2/grub.cfg
+      cmd: grub2-mkconfig -o /boot/efi/EFI/almalinux/
   when: grub_config.stat.exists
